@@ -16,20 +16,20 @@ body{cursor: url(../images/cursor.cur), auto;}
 #menuicon {display:none;width: 10%;position: absolute;height: 100%;right: 0px;top: 0px;background-repeat: no-repeat;background-position: center;z-index: 2;} 
 .menuiconon{background-image:url('../images/menuiconon.png');transition: 2s;transform: rotate(-180deg);} 
 .menuiconoff{background-image:url('../images/menuiconoff.png');transition: 2s;transform: rotate(90deg);}  
-.name,.nameLogo{font-family: var( --font-text);font-size: 10em;text-transform: uppercase;text-shadow: 1px 1px 1px #f9c511;} 
+.name,.nameLogo{font-family: var( --font-text);font-size: 10em;text-transform: uppercase;text-shadow: 1px 1px 1px var( --cor-secundario);} 
 .nameLogo{color: #FFF;} 
 .lastname,.lastnameLogo{font-family: var( --font-text);color:var( --cor-secundario);text-shadow: 1px 1px 1px #000;}  
 .nameLogo{font-size: 2.5em;float: left;margin: 0px 1.5%;} 
 .painel {background-position: 50% 0; background-size: 100% 100%; background-attachment: fixed;position: relative;	width:100%;    padding-top: 5%;}  
 .divlogo {box-shadow: 20px 20px 0px 0px #333;position: absolute;width: 15%;right: 5%;} 
 #logo {width: 100%; box-shadow: 10px 10px 0px var( --cor-secundario);} 
-#imglogomarca {float: left;width: 85px;}  
+#imglogomarca {float: right;width: 25px;margin-top: 5px;}  
 #about>.view-painel{padding: 5rem 1.5rem 1.5rem 1.5rem;} 
 .title-painel {font-size: 2em;    text-transform: uppercase;    background-color:var( --cor-secundario);	text-shadow: 1px 1px 1px #000;    color: #FFF;    text-indent: 20px;} 
 .subtitle-painel {    font-size: 1em;    width: 90%;    margin: 0px;} 
 .info-painel {font-size: 0.8em;color: #777;} 
 .welcome,.fa-ul>li{position: relative;font-size: 1.5em;} 
-.post-painel:not(.welcome){position: relative;font-size: 1.5em;background-color: #ffffff;margin-bottom: 20px;padding: 5px 15px;box-shadow: 0px 0px 5px -1px #333333; width: 30%;display: inline-block; vertical-align: top; margin: 5px; min-height: 200px;} 
+.post-painel:not(.welcome){position: relative;font-size: 1.5em;background-color: #ffffff;margin-bottom: 20px;padding: 5px 15px;box-shadow: 0px 0px 1px 0px #333333; width: 30%;display: inline-block; vertical-align: top; margin: 5px; min-height: 200px;} 
 .fluid-post{min-height:auto!important;}
 .post-painel p {width: 100%;padding: 5px 0px;} 
 .date-painel {position: absolute;top: 0px;right: 5%;} 
