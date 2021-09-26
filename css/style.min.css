@@ -1,125 +1,634 @@
-@charset "UTF-8"; 
-@font-face {font-family: "basictitlefont";src: url(../fonts/Roboto.ttf) format("truetype");} 
-@font-face {font-family: "sariamedium";src: url(../fonts/SairaExtraCondensed-Medium.ttf) format("truetype");}  
-*{margin:0px auto;padding:0px;font-family: var( --font-text);color:var( --cor-primaria);} 
-body{cursor: url(../images/cursor.cur), auto;}  
-#menu{position: fixed;z-index: 100;width: 100%;color: var( --cor-fonte-menu);text-align: center; background-color: var(--cor-primaria)} 
-#menu ul {padding: 0px;margin: 0px;list-style: none;text-align: right;border-bottom: 1em solid var( --cor-secundario);} 
-#menu ul li {display: inline-block;margin:-2px;} 
-#menu ul li a {position: relative;text-decoration: none;color: var( --cor-fonte-menu);font-weight: 600; text-transform: uppercase;font-size: 1.5em;padding: 13px;display: inline-block;}  
-.selectedmenu{background: var( --cor-fonte-menu-hover) !important;text-shadow: 1px 1px 1px #000;} 
-.email-painel:hover{text-shadow: 1px 1px 1px var( --cor-fonte-menu-hover) !important;} 
-.itemmenu:hover{color: var( --cor-fonte-menu-hover) !important} 
-.selectedmenu>a:hover{color:#FFFFFF!important} 
-.itemmenu span:hover,.selectedmenu span{color:var( --cor-fonte-menu)!important;}  
-.traducao {padding: 5px;} 
-#menuicon {display:none;width: 10%;position: absolute;height: 100%;right: 0px;top: 0px;background-repeat: no-repeat;background-position: center;z-index: 2;} 
-.menuiconon{background-image:url('../images/menuiconon.png');transition: 2s;transform: rotate(-180deg);} 
-.menuiconoff{background-image:url('../images/menuiconoff.png');transition: 2s;transform: rotate(90deg);}  
-.name,.nameLogo{font-family: var( --font-text);font-size: 10em;text-transform: uppercase;text-shadow: 1px 1px 1px var( --cor-secundario);} 
-.nameLogo{color: #FFF;} 
-.lastname,.lastnameLogo{font-family: var( --font-text);color:var( --cor-secundario);text-shadow: 1px 1px 1px #000;}  
-.nameLogo{font-size: 2.5em;float: left;margin: 0px 1.5%;} 
-.painel {background-position: 50% 0; background-size: 100% 100%; background-attachment: fixed;position: relative;	width:100%;    padding-top: 5%;}  
-.divlogo {box-shadow: 20px 20px 0px 0px #333;position: absolute;width: 15%;right: 5%;} 
-#logo {width: 100%; box-shadow: 10px 10px 0px var( --cor-secundario);} 
-#imglogomarca {float: right;width: 25px;margin-top: 5px;}  
-#about>.view-painel{padding: 5rem 1.5rem 1.5rem 1.5rem;} 
-.title-painel {font-size: 2em;    text-transform: uppercase;    background-color:var( --cor-secundario);	text-shadow: 1px 1px 1px #000;    color: #FFF;    text-indent: 20px;} 
-.subtitle-painel {    font-size: 1em;    width: 90%;    margin: 0px;} 
-.info-painel {font-size: 0.8em;color: #777;} 
-.welcome,.fa-ul>li{position: relative;font-size: 1.5em;} 
-.post-painel:not(.welcome){position: relative;font-size: 1.5em;background-color: #ffffff;margin-bottom: 20px;padding: 5px 15px;box-shadow: 0px 0px 1px 0px #333333; width: 30%;display: inline-block; vertical-align: top; margin: 5px; min-height: 200px;} 
-.fluid-post{min-height:auto!important;}
-.post-painel p {width: 100%;padding: 5px 0px;} 
-.date-painel {position: absolute;top: 0px;right: 5%;} 
-.date-info {color: #777777; font-size: 20px;} 
-.logoEntidade { width: 35px; float: right;}
-.imgprojetos {width: 100%;    height: 200px;    border-radius: 5px;    margin: 5px 0px;    box-shadow: 0px 0px 5px -2px #333;}  
-footer {background-color: #333333;margin-top: 2%} 
-footer a, footer p {color: #FFFFFF;    text-decoration: none;} 
-footer div {display: inline-block; width: 30%; vertical-align: top; padding: 10% 1%;} 
-footer .fa {color: #FFF; background-color: transparent; border: 1px solid;} 
-footer .fa:hover {background-color: #FFF; color: #333333;}  
-.fa	{display:inline-block;font-size:20px!important;} 
-.devicon{display:inline-block;margin: 5px;color:var(--cor-primaria);} 
-.devicon:hover::before{color:  var( --cor-fonte-menu-hover);} 
-.devicon::before {font-size: 6em;}  
+@charset "UTF-8";
 
-::-webkit-scrollbar { width: 10px; height: 10px;}  
-::-webkit-scrollbar-track-piece { background-color: #333333;}  
-::-webkit-scrollbar-thumb:vertical { height: 50px; background-color: var( --cor-secundario);}  
-::-webkit-scrollbar-thumb:horizontal { width: 50px; background-color: var( --cor-secundario);}  
+@font-face {
+	font-family: "basictitlefont";
+	src: url(../fonts/Roboto.ttf) format("truetype");
+}
 
-@media only all and (max-width: 320px){ 	
-	#conteudo{width: 100%} 	
-	#about>.view-painel{padding: 4rem 1.5rem 1.5rem 1.5rem;} 	
-	#menu{width: 100%;background-color: transparent;height: auto;} 	
-	#menu ul {display: none; height: auto; background-color: var( --cor-fundo-menu-media); top: 0px; position: fixed; right: 0px; transform: rotate(-45deg); margin: -45% -18%; border: 0px; padding: 35% 20% 35% 10%; border-radius: 100%; } 	
-	#menu ul li {text-align: right;display: block;border-radius: 50%;width: 250px;} 	
-	#menu ul li a {width: 80%;padding: 5% 52% 5% 5%;text-align: left;} 	
-	#menuicon {display:block;right: 10px;top: 10px;width: 35px;height: 35px;} 	
-	#logo {width: 100%;margin: 0% 0px;} 	#imglogomarca {width: 20%;}  	
-	.painel{padding-top:0px;} 	.divlogo {position: relative; width: 45%;} 	
-	.date-painel {position:relative;top:auto;right:auto;} 	
-	.name {font-size: 3em;} 	
-	.nameLogo {font-size: 2.5em} 	
-	.post-painel, .fa-ul>li {font-size: 1em;} 	
-	.post-painel:not(.welcome) {width: 85%;margin: 2.5%;} 	
-	.date-info {position: relative;font-size: medium;} 	
-	.title-painel {border-top-right-radius: 5px;border-bottom-right-radius: 5px;} 	
-	.selectedmenu, .email-painel:hover {background: transparent !important;	border-bottom: 5px solid var( --cor-fonte-menu-hover) !important;	} 	
-	.nameLogo:not(.rodape-nameLogo){display:none;} 	 	
-	footer{padding-bottom: 20%;} 	
-	footer div {width: 85%; padding: 5% 1%;display: list-item;} 
-}  
+@font-face {
+	font-family: "sariamedium";
+	src: url(../fonts/SairaExtraCondensed-Medium.ttf) format("truetype");
+}
 
-@media only all and (max-width: 800px){ 	
-	#conteudo{width: 100%} 	
-	#about>.view-painel{padding: 4rem 1.5rem 1.5rem 1.5rem;} 	
-	#menu{width: 100%;background-color: transparent;height: auto;} 	
-	#menu ul {display: none; height: auto; background-color: var( --cor-fundo-menu-media); top: 0px; position: fixed; right: 0px; transform: rotate(-45deg); margin: -45% -18%; border: 0px; padding: 35% 20% 35% 10%; border-radius: 100%; } 	
-	#menu ul li {text-align: right;display: block;border-radius: 50%;width: 250px;} 	
-	#menu ul li a {width: 80%;padding: 5% 52% 5% 5%;text-align: left;} 	
-	#menuicon {display:block;right: 5px;top: 5px; width: 35px;height: 35px;} 	
-	#logo {width: 100%;margin: 0% 0px;} 	
-	#imglogomarca {width: 25%;} 	 	
-	.painel{padding-top:0px;} 	
-	.divlogo {position: relative; width: 45%;} 	
-	.date-painel {position:relative;top:auto;right:auto;} 	
-	.name {font-size: 4em;} 	
-	.nameLogo {font-size: 2.5em} 	
-	.post-painel, .fa-ul>li {font-size: 1em;} 	
-	.post-painel:not(.welcome) {width: 85%;margin: 2.5%;} 	
-	.date-info {position: relative;font-size: medium;} 	
-	.title-painel {border-top-right-radius: 5px;border-bottom-right-radius: 5px;} 	
-	.selectedmenu, .email-painel:hover {background: transparent !important;	border-bottom: 5px solid var( --cor-fonte-menu-hover) !important;	} 	
-	.nameLogo:not(.rodape-nameLogo){display:none;} 	 	
-	footer{padding-bottom: 20%;} 	
-	footer div {width: 85%; padding: 5% 1%;display: list-item;} 
-}  
+* {
+	margin: 0px auto;
+	padding: 0px;
+	font-family: var(--font-text);
+	color: var(--cor-primaria);
+}
 
-@media only all and (max-width: 1024px) and (min-width: 801px) { 	
-	#conteudo{width: 100%} 	
-	#about>.view-painel{padding: 4rem 1.5rem 1.5rem 1.5rem;} 	
-	#menu{width: 100%;background-color: transparent;height: auto;}	 	
-	#menu ul {display: none; height: auto; background-color: var( --cor-fundo-menu-media); top: 0px; position: fixed; right: 0px; transform: rotate(-45deg); margin: -45% -18%; border: 0px; padding: 35% 20% 35% 10%; border-radius: 100%; } 	
-	#menu ul li {text-align: right;display: block;border-radius: 50%;width: 250px;} 	
-	#menu ul li a {width: 80%;padding: 5% 52% 5% 5%;text-align: left;} 	
-	#menuicon {display:block;width: 35px;height: 35px;} 	
-	#logo {width: 100%;margin: 0% 0px;} 	
-	#imglogomarca {width: 30%;}  	
-	.painel{padding-top:0px;} 	
-	.divlogo {position: relative; width: 45%;} 	
-	.date-painel {position:relative;top:auto;right:auto;} 	
-	.name {font-size: 5em;} 	
-	.nameLogo {font-size: 2.5em} 	
-	.post-painel, .fa-ul>li {font-size: 1em;} 	
-	.post-painel:not(.welcome) {width: 85%;margin: 2.5%;} 	
-	.date-info {position: relative;font-size: medium;} 	
-	.title-painel {border-top-right-radius: 5px;border-bottom-right-radius: 5px;} 	
-	.selectedmenu, .email-painel:hover {background: transparent !important;	border-bottom: 5px solid var( --cor-fonte-menu-hover) !important;	} 	
-	.nameLogo:not(.rodape-nameLogo){display:none;} 	 	
-	footer{padding-bottom: 20%;} 	
-	footer div {width: 85%; padding: 5% 1%;display: list-item;} 
-} 
+body {
+	cursor: url(../images/cursor.cur), auto;
+}
+
+#menu {
+	position: fixed;
+	z-index: 100;
+	width: 100%;
+	color: var(--cor-fonte-menu);
+	text-align: center;
+	background-color: var(--cor-primaria)
+}
+
+#menu ul {
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+	text-align: right;
+	border-bottom: 1em solid var(--cor-secundario);
+	text-align: right;
+}
+
+#menu ul li {
+	display: inline-block;
+	margin: -2px;
+	text-align: center;
+}
+
+#menu ul li a {
+	position: relative;
+	text-decoration: none;
+	color: var(--cor-fonte-menu);
+	font-weight: 600;
+	text-transform: uppercase;
+	font-size: 1.5em;
+	padding: 13px;
+	display: inline-block;
+}
+
+.selectedmenu {
+	background: var(--cor-fonte-menu-hover) !important;
+	text-shadow: 1px 1px 1px #000;
+}
+
+.email-painel:hover {
+	text-shadow: 1px 1px 1px var(--cor-fonte-menu-hover) !important;
+}
+
+.itemmenu:hover {
+	color: var(--cor-fonte-menu-hover) !important
+}
+
+.selectedmenu>a:hover {
+	color: #FFFFFF !important
+}
+
+.itemmenu span:hover,
+.selectedmenu span {
+	color: var(--cor-fonte-menu) !important;
+}
+
+.traducao {
+	padding: 5px;
+}
+
+#menuicon {
+	display: none;
+	width: 10%;
+	position: absolute;
+	height: 100%;
+	right: 0px;
+	top: 0px;
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: 2;
+}
+
+.menuiconon {
+	background-image: url('../images/menuiconon.png');
+	transition: 2s;
+	transform: rotate(-180deg);
+}
+
+.menuiconoff {
+	background-image: url('../images/menuiconoff.png');
+	transition: 2s;
+	transform: rotate(90deg);
+}
+
+.name,
+.nameLogo {
+	font-family: var(--font-text);
+	font-size: 10em;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 1px var(--cor-secundario);
+}
+
+.nameLogo {
+	color: #FFF;
+}
+
+.lastname,
+.lastnameLogo {
+	font-family: var(--font-text);
+	color: var(--cor-secundario);
+	text-shadow: 1px 1px 1px #000;
+}
+
+.nameLogo {
+	font-size: 2.5em;
+	float: left;
+	margin: 0px 1.5%;
+}
+
+.painel {
+	background-position: 50% 0;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	position: relative;
+	width: 100%;
+	padding-top: 5%;
+}
+
+.divlogo {
+	box-shadow: 20px 20px 0px 0px #333;
+	position: absolute;
+	width: 15%;
+	right: 5%;
+}
+
+#logo {
+	width: 100%;
+	box-shadow: 10px 10px 0px var(--cor-secundario);
+}
+
+#imglogomarca {
+	float: right;
+	width: 25px;
+	margin-top: 5px;
+}
+
+#about>.view-painel {
+	padding: 5rem 1.5rem 1.5rem 1.5rem;
+}
+
+.title-painel {
+	font-size: 2em;
+	text-transform: uppercase;
+	background-color: var(--cor-secundario);
+	text-shadow: 1px 1px 1px #000;
+	color: #FFF;
+	text-indent: 20px;
+}
+
+.subtitle-painel {
+	font-size: 1em;
+	width: 90%;
+	margin: 0px;
+}
+
+.info-painel {
+	font-size: 0.8em;
+	color: #777;
+}
+
+.welcome,
+.fa-ul>li {
+	position: relative;
+	font-size: 1.5em;
+}
+
+.post-painel:not(.welcome) {
+	position: relative;
+	font-size: 1.5em;
+	background-color: #ffffff;
+	margin-bottom: 20px;
+	padding: 5px 15px;
+	box-shadow: 0px 0px 1px 0px #333333;
+	width: 30%;
+	display: inline-block;
+	vertical-align: top;
+	margin: 5px;
+	min-height: 200px;
+}
+
+.fluid-post {
+	min-height: auto !important;
+}
+
+.post-painel p {
+	width: 100%;
+	padding: 5px 0px;
+}
+
+.date-painel {
+	position: absolute;
+	top: 0px;
+	right: 5%;
+}
+
+.date-info {
+	color: #777777;
+	font-size: 20px;
+}
+
+.logoEntidade {
+	width: 35px;
+	float: right;
+}
+
+.imgprojetos {
+	width: 100%;
+	height: 200px;
+	border-radius: 5px;
+	margin: 5px 0px;
+	box-shadow: 0px 0px 5px -2px #333;
+}
+
+footer {
+	background-color: #333333;
+	margin-top: 2%
+}
+
+footer a,
+footer p {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+footer div {
+	display: inline-block;
+	width: 30%;
+	vertical-align: top;
+	padding: 10% 1%;
+}
+
+footer .fa {
+	color: #FFF;
+	background-color: transparent;
+	border: 1px solid;
+}
+
+footer .fa:hover {
+	background-color: #FFF;
+	color: #333333;
+}
+
+.fa {
+	display: inline-block;
+	font-size: 20px !important;
+}
+
+.devicon {
+	display: inline-block;
+	margin: 5px;
+	color: var(--cor-primaria);
+}
+
+.devicon:hover::before {
+	color: var(--cor-fonte-menu-hover);
+}
+
+.devicon::before {
+	font-size: 6em;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-track-piece {
+	background-color: #333333;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+	height: 50px;
+	background-color: var(--cor-secundario);
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+	width: 50px;
+	background-color: var(--cor-secundario);
+}
+
+@media only all and (max-width: 320px) {
+	#conteudo {
+		width: 100%
+	}
+
+	#about>.view-painel {
+		padding: 4rem 1.5rem 1.5rem 1.5rem;
+	}
+
+	#menu {
+		width: 100%;
+		background-color: transparent;
+		height: auto;
+	}
+
+	#menu ul {
+		display: none;
+		background-color: var(--cor-fundo-menu-media);
+		top: 0px;
+		position: fixed;
+		right: 0px;
+		width: 100%;
+		height: 100%;
+		border: 0px;
+		margin: auto;
+		padding: 50% 0%;
+	}
+
+	#menu ul li {
+		display: block;
+	}
+
+	#menuicon {
+		display: block;
+		right: 10px;
+		top: 10px;
+		width: 35px;
+		height: 35px;
+	}
+
+	#logo {
+		width: 100%;
+		margin: 0% 0px;
+	}
+
+	.painel {
+		padding-top: 0px;
+	}
+
+	.divlogo {
+		position: relative;
+		width: 45%;
+	}
+
+	.date-painel {
+		position: relative;
+		top: auto;
+		right: auto;
+	}
+
+	.name {
+		font-size: 3em;
+	}
+
+	.nameLogo {
+		font-size: 2.5em
+	}
+
+	.post-painel,
+	.fa-ul>li {
+		font-size: 1em;
+	}
+
+	.post-painel:not(.welcome) {
+		width: 85%;
+		margin: 2.5%;
+	}
+
+	.date-info {
+		position: relative;
+		font-size: medium;
+	}
+
+	.title-painel {
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
+	}
+
+	.selectedmenu,
+	.email-painel:hover {
+		background: transparent !important;
+	}
+
+	.selectedmenu a {
+		color: var(--cor-fonte-menu-hover) !important;
+	}
+
+	.nameLogo:not(.rodape-nameLogo) {
+		display: none;
+	}
+
+	footer {
+		padding-bottom: 20%;
+	}
+
+	footer div {
+		width: 85%;
+		display: list-item;
+	}
+}
+
+@media only all and (max-width: 800px) {
+	#conteudo {
+		width: 100%
+	}
+
+	#about>.view-painel {
+		padding: 4rem 1.5rem 1.5rem 1.5rem;
+	}
+
+	#menu {
+		width: 100%;
+		background-color: transparent;
+		height: auto;
+	}
+
+	#menu ul {
+		display: none;
+		background-color: var(--cor-fundo-menu-media);
+		top: 0px;
+		position: fixed;
+		right: 0px;
+		width: 100%;
+		height: 100%;
+		border: 0px;
+		margin: auto;
+		padding: 35% 0%;
+	}
+
+	#menu ul li {
+		display: block;
+	}
+
+	#menuicon {
+		display: block;
+		right: 5px;
+		top: 5px;
+		width: 35px;
+		height: 35px;
+	}
+
+	#logo {
+		width: 100%;
+		margin: 0% 0px;
+	}
+
+	.painel {
+		padding-top: 0px;
+	}
+
+	.divlogo {
+		position: relative;
+		width: 45%;
+	}
+
+	.date-painel {
+		position: relative;
+		top: auto;
+		right: auto;
+	}
+
+	.name {
+		font-size: 4em;
+	}
+
+	.nameLogo {
+		font-size: 2.5em
+	}
+
+	.post-painel,
+	.fa-ul>li {
+		font-size: 1em;
+	}
+
+	.post-painel:not(.welcome) {
+		width: 85%;
+		margin: 2.5%;
+	}
+
+	.date-info {
+		position: relative;
+		font-size: medium;
+	}
+
+	.title-painel {
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
+	}
+
+	.selectedmenu,
+	.email-painel:hover {
+		background: transparent !important;
+	}
+
+	.selectedmenu a {
+		color: var(--cor-fonte-menu-hover) !important;
+	}
+
+	.nameLogo:not(.rodape-nameLogo) {
+		display: none;
+	}
+
+	footer {
+		padding-bottom: 20%;
+	}
+
+	footer div {
+		width: 85%;
+		display: list-item;
+	}
+}
+
+@media only all and (max-width: 1024px) and (min-width: 801px) {
+	#conteudo {
+		width: 100%
+	}
+
+	#about>.view-painel {
+		padding: 4rem 1.5rem 1.5rem 1.5rem;
+	}
+
+	#menu {
+		width: 100%;
+		background-color: transparent;
+		height: auto;
+	}
+
+	#menu ul {
+		display: none;
+		background-color: var(--cor-fundo-menu-media);
+		top: 0px;
+		position: fixed;
+		right: 0px;
+		width: 100%;
+		height: 100%;
+		border: 0px;
+		margin: auto;
+		padding: 50% 0%;
+	}
+
+	#menu ul li {
+		display: block;
+	}
+
+	#menuicon {
+		display: block;
+		width: 35px;
+		height: 35px;
+	}
+
+	#logo {
+		width: 100%;
+		margin: 0% 0px;
+	}
+
+	.painel {
+		padding-top: 0px;
+	}
+
+	.divlogo {
+		position: relative;
+		width: 45%;
+	}
+
+	.date-painel {
+		position: relative;
+		top: auto;
+		right: auto;
+	}
+
+	.name {
+		font-size: 5em;
+	}
+
+	.nameLogo {
+		font-size: 2.5em
+	}
+
+	.post-painel,
+	.fa-ul>li {
+		font-size: 1em;
+	}
+
+	.post-painel:not(.welcome) {
+		width: 85%;
+		margin: 2.5%;
+	}
+
+	.date-info {
+		position: relative;
+		font-size: medium;
+	}
+
+	.title-painel {
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
+	}
+
+	.selectedmenu,
+	.email-painel:hover {
+		background: transparent !important;
+	}
+
+	.selectedmenu a {
+		color: var(--cor-fonte-menu-hover) !important;
+	}
+
+	.nameLogo:not(.rodape-nameLogo) {
+		display: none;
+	}
+
+	footer {
+		padding-bottom: 20%;
+	}
+
+	footer div {
+		width: 85%;
+		display: list-item;
+	}
+}
