@@ -1,17 +1,9 @@
 :root {
     --cor-primaria: #333333;
-<<<<<<< HEAD
-    --cor-secundario: #3c3c3c!important;
-    --cor-fundo-menu: #121212;
-    --cor-fundo-menu-media: #111111;
-    --cor-fonte-menu: #FFFFFF;
-    --cor-fonte-menu-hover: #3c3c3c!important;
-=======
     --cor-secundario: #484848!important;
     --cor-fundo-menu: #121212;
     --cor-fundo-menu-media: #111111;
     --cor-fonte-menu: #FFFFFF;
     --cor-fonte-menu-hover: #484848!important;
->>>>>>> gh-pages
     --font-text: "sariamedium";
 }
