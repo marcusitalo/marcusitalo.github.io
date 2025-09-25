@@ -3124,6 +3124,7 @@ td:last-child {
     width: var(--logo-width);
     margin: 0;
     vertical-align: bottom;
+    width: 3vw;
 }
 
 /* --------------------------------------------------------------------
